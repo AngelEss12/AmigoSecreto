@@ -30,7 +30,7 @@ function App() {
       <div className='w-full h-[90vh] flex items-center justify-center bg-slate-300'>
         <div className='sm:w-[90%] lg:w-[40%] bg-white p-6 rounded shadow-lg flex flex-col gap-4'>
           <InputNombre
-            value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && agregarNombre()} />
 
           {listNames && (
             <ListaNombres names={names} />
@@ -43,8 +43,7 @@ function App() {
 
           <div className='flex gap-2 w-full justify-between'>
             <button className='bg-blue-500 w-[250px] text-white text-xl font-bold uppercase p-3 rounded hover:bg-blue-600 transition-colors duration-300'
-              onClick={agregarNombre}
-              onKeyDown={(e) => e.key === 'Enter' && agregarNombre()}>
+              onClick={agregarNombre}>
               Agregar
             </button>
             <button className='bg-green-500 w-[250px] text-white text-xl font-bold uppercase p-3 rounded hover:bg-green-600 transition-colors duration-300'
