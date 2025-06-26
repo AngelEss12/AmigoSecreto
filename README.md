@@ -58,7 +58,6 @@ npm run dev
 - ESLint (con soporte para TypeScript y React Hooks)
 - localStorage API para persistencia de datos
 
-·
 ## 📝 Posibles mejoras
 - ✅ Exportar el resultado del sorteo.
 - ✅ Eliminar nombres individualmente.
