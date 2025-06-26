@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './App.css'
+import InputNombre from './components/InputNombre';
+import ListaNombres from './components/ListaNombres';
+import Sorteado from './components/Sorteado';
 
 function App() {
 
@@ -51,28 +54,15 @@ function App() {
 
       <div className='w-full h-[90vh] flex items-center justify-center bg-slate-300'>
         <div className='sm:w-[90%] lg:w-[40%] bg-white p-6 rounded shadow-lg flex flex-col gap-4'>
-          <input type="text" className='border border-gray-400 p-2 rounded w-full text-2xl'
-            value={inputValue}
-            placeholder='Agregue nombre del Amigo'
-            onChange={(e) => setInputValue(e.target.value)}
-          />
+          <InputNombre 
+          value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
 
-          {listNames && (<div className='flex flex-col gap-4'>
-            <h3 className='text-2xl font-bold text-center py-3'>Lista de Amigos</h3>
-            {
-              names.map((name, index) => (
-                <p key={index} className='border-b border-gray-300 pb-1 text-xl'>
-                  {name}
-                </p>
-              ))
-            }
-          </div>)}
+          {listNames && (
+            <ListaNombres names={names} />
+          )}
 
           {sorteo && (
-            <div>
-              <h3 className='text-2xl font-bold text-center py-3'>El amigo Sorteado es:</h3>
-              <p className='text-4xl py-4 text-center'>{names[sorteado]}</p>
-            </div>
+            <Sorteado names={names[sorteado]} />
           )}
 
 
