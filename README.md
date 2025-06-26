@@ -1,69 +1,69 @@
-# React + TypeScript + Vite
+# 🎁 Amigo Secreto - Sorteador de Nombres
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un proyecto desarrollado con **React + TypeScript + Vite**, que permite gestionar una lista de nombres y realizar un sorteo aleatorio para elegir un "amigo secreto". La aplicación guarda los nombres en el navegador usando `localStorage`, lo que permite conservar la lista entre recargas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características
 
-## Expanding the ESLint configuration
+- ✅ Agregar nombres únicos a una lista.
+- ✅ Mostrar la lista de participantes en pantalla.
+- ✅ Sorteo aleatorio de un nombre.
+- ✅ Persistencia con `localStorage`.
+- ✅ Reinicio del estado y limpieza del almacenamiento.
+- ✅ Accesibilidad: puedes presionar `Enter` para agregar nombres fácilmente.
+- ✅ Estilo moderno y responsivo con Tailwind CSS.
+- ✅ Separación de lógica en componentes y hooks personalizados.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 Estructura del proyecto
+public/
+├── src/
+│ ├── components/
+│ │ ├── InputNombre.tsx # Componente input controlado
+│ │ ├── ListaNombres.tsx # Lista de nombres añadidos
+│ │ └── Sorteado.tsx # Visualización del nombre sorteado
+│ ├── hooks/
+│ │ └── useSorteoAmigo.ts # Hook personalizado que maneja toda la lógica
+│ ├── App.tsx # Composición general de la app
+│ └── main.tsx # Punto de entrada principal
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🚀 Instalación y ejecución
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/AngelEss12/AmigoSecreto
+cd AmigoSecreto
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instala las dependencias:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+3. Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+## 🧠 Tecnologías utilizadas
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- ESLint (con soporte para TypeScript y React Hooks)
+- localStorage API para persistencia de datos
+
+·
+## 📝 Posibles mejoras
+- ✅ Exportar el resultado del sorteo.
+- ✅ Eliminar nombres individualmente.
+- ✅ Soporte para múltiples sorteos sin repetir.
+- ✅ Animaciones al sortear o mostrar resultados.
+- ✅ Añadir pruebas unitarias con Vitest o React Testing Library.
+
+¡Gracias por visitar este proyecto! 💖 Siéntete libre de contribuir o compartir.
