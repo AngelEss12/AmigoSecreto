@@ -18,7 +18,15 @@ export const useSorteoAmigo = () => {
 
     const agregarNombre = () => {
         if (listNames) {
-            if (inputValue.trim() === '') return;
+            if (inputValue.trim() === '') {
+                alert("Por favor, ingresa un nombre.");
+                return;
+            }
+            
+            if (names.includes(inputValue.trim())) {
+                alert("El nombre ya existe en la lista.");
+                return;
+            }
 
             setNames([...names, inputValue]);
             setInputValue('');

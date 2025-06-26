@@ -43,7 +43,8 @@ function App() {
 
           <div className='flex gap-2 w-full justify-between'>
             <button className='bg-blue-500 w-[250px] text-white text-xl font-bold uppercase p-3 rounded hover:bg-blue-600 transition-colors duration-300'
-              onClick={agregarNombre}>
+              onClick={agregarNombre}
+              onKeyDown={(e) => e.key === 'Enter' && agregarNombre()}>
               Agregar
             </button>
             <button className='bg-green-500 w-[250px] text-white text-xl font-bold uppercase p-3 rounded hover:bg-green-600 transition-colors duration-300'
